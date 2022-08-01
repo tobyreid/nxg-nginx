@@ -1,0 +1,15 @@
+version: '3'
+services:
+    reverseproxy:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+          - 8080:8080
+          - 8081:8081
+      restart: always
+    redis:
+      image: redislabs/redismod
+      ports:
+        - 6379:6379
+
